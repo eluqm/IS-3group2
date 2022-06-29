@@ -1,1 +1,2 @@
-# IS-3group2
+# BeResearcher 
+## Proyecto Final - Ingeniería de Software 3 
