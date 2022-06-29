@@ -1,0 +1,24 @@
+{
+  "name": "is-3group2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eluqm/IS-3group2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eluqm/IS-3group2/issues"
+  },
+  "homepage": "https://github.com/eluqm/IS-3group2#readme",
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^4.7.4"
+  }
+}
