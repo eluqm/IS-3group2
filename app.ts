@@ -1,3 +1,7 @@
-export const name = 'Holaa';
+import dotenv from 'dotenv';
+import ServerForMicroservice from "./models/server";
 
-console.log(name)
+dotenv.config();
+const microServer = new ServerForMicroservice();
+
+microServer.listenServer();
