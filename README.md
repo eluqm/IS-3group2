@@ -79,9 +79,16 @@ investigadores, Tesistas, Investigadores asociados, etc.
 - El despliegue será local 
 - Solo correrá en navegadores web
 
+## 5. Mockup
 
+Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para posteriormente realizar la codificación de la aplicación web. Como páginas principales tomamos:
 
+- Home: Inicio de la aplicación web, donde se visualizará las funciones.
+- Login: Solo para los investigadores.
+- Investigaciones: Lugar donde se podrán ver todas las investigaciones que están ejecutando por facultad.
+- Información de la investigación: En este apartado se dará una información más amplia sobre la investigación que se esté efectuando.
 
+Para la elaboración del prototipo se utilizo la herramienta de figma
 
 
 
