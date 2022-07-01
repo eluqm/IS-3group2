@@ -1,4 +1,4 @@
-# BeResearcher - Software Engineering 3 
+# BeResearcher - Software Engineering 3
 
 ## 1. Integrantes
 
