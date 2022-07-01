@@ -56,8 +56,28 @@ aplicación podrá conectar a alumnos interesados en la ciencia con profesores i
 
 - Modelo Vista Controlador
 
-## 4. Requerimientos 
+## 4. El sistema  
 
+### 4.1 Los Usuarios 
+
+El sistema cuenta con (2) tipos de usuarios. Sus diferencias son notables.
+
+#### 4.1.1 Usuario - Estándar  
+
+Este usuario podrá acceder directamente al mostrador de investigaciones en la universidad, podrá filtrarlas, buscarlas y contactarse
+con los profesores investigadores. Ellos no cuentan con tokens de acceso. Se limitan a informarse.
+Podrían ser: Estudiantes universitarios, Tesistas, Público en general, profesores, empresas interesadas, etc.   
+ 
+#### 4.1.2 Usuario - Investigador 
+
+El usuario investigador es una persona que puede publicar su proyecto de investigación y agregar todas las características necesarias. 
+Él necesita un token de acceso para ingresar a la plataforma. Su finalidad es ser contactados y exponer su investigación. Pueden ser: Profesores 
+investigadores, Tesistas, Investigadores asociados, etc. 
+
+### 4.2 Restricciones 
+
+- El despliegue será local 
+- Solo correrá en navegadores web
 
 
 
