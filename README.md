@@ -117,6 +117,10 @@ RF04:
 
 ### 4.7 Base de Datos
 
+Modelo Entidad Relacion:
+
+![SARD](BD/Diagramas/Modelo_Entidad_Relacion.png)
+
 
 ## 5. Mockup
 
