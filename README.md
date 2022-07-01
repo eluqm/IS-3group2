@@ -3,8 +3,8 @@
 ## 1. Integrantes
 
 - Eden Palli Livisi 
-- Chura Navarro, Ckarol Darlene 
-- Moroco Ramosm, Luis Angel
+- Chura Navarro, Ckaroll Darlene 
+- Moroco Ramos, Luis Angel
 - Valdivia Quispe, Eduardo Felipe 
 - Valencia Arana, Gabriel Adriano
 
@@ -107,7 +107,8 @@ Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para 
 - Investigaciones: Lugar donde se podrán ver todas las investigaciones que están ejecutando por facultad.
 - Información de la investigación: En este apartado se dará una información más amplia sobre la investigación que se esté efectuando.
 
-Para la elaboración del prototipo se utilizo la herramienta de figma
+Para la elaboración del prototipo se utilizo la herramienta de Figma: https://www.figma.com/file/hVSpPX0azzJy9hBA2FByNh/BE-RESEARCHER?node-id=0%3A1
+
 
 
 
