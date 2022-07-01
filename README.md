@@ -98,6 +98,19 @@ investigadores, Tesistas, Investigadores asociados, etc.
 
 ### 4.4 Diagramas de estado
 
+RF01:
+![DRF01](static/Diagrams/rf01.jpeg)
+RF02:
+![DRF02](static/Diagrams/rf02.jpeg)
+RF03:
+![DRF03](static/Diagrams/rf03.jpeg)
+RF04:
+![DRF04](static/Diagrams/rf04.jpeg)
+
+### 4.5 Diagrama de casos de uso
+
+![DCU](static/Diagrams/DCU.png)
+
 ## 5. Mockup
 
 Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para posteriormente realizar la codificación de la aplicación web. Como páginas principales tomamos:
