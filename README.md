@@ -122,6 +122,16 @@ Modelo Entidad Relacion:
 ![SARD](BD/Diagramas/Modelo_Entidad_Relacion.png)
 
 
+Diagrama Entidad Relacion:
+
+![SARD](BD/Diagramas/Diagrama_Entidad_Relacion.png)
+
+Diagrama de Bade de Datos:
+
+![SARD](BD/Diagramas/Diagrama_de_Bade_de_Datos.png)
+
+
+
 ## 5. Mockup
 
 Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para posteriormente realizar la codificación de la aplicación web. Como páginas principales tomamos:
