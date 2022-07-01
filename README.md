@@ -10,3 +10,4 @@ Diagrama de Estados: Publicar investigación (RF02)
 Diagrama de Estados: Buscar investigación (RF03)
 ![RF03](https://user-images.githubusercontent.com/64216012/176915628-0df5c275-ca0c-4a3e-a48f-579c3c29e11c.jpg)
 
+Diagrama de Estados: Contactar investigador(es) (RF04)
