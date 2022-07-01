@@ -3,7 +3,7 @@
 ## 1. Integrantes
 
 - Eden Palli Livisi 
-- Chura Navarro, Ckarol Darlene 
+- Chura Navarro, Ckaroll Darlene 
 - Moroco Ramosm, Luis Angel
 - Valdivia Quispe, Eduardo Felipe 
 - Valencia Arana, Gabriel Adriano
