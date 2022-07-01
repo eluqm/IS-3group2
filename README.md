@@ -115,6 +115,9 @@ RF04:
 
 ![SARD](static/Diagrams/architectu.jpeg)
 
+### 4.7 Arquitectura de software 
+
+
 ## 5. Mockup
 
 Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para posteriormente realizar la codificación de la aplicación web. Como páginas principales tomamos:
