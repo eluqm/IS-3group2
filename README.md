@@ -79,6 +79,25 @@ investigadores, Tesistas, Investigadores asociados, etc.
 - El despliegue será local 
 - Solo correrá en navegadores web
 
+### 4.3 Requerimientos
+
+#### 4.3.1 Requisitos funcionales
+
+![RF01](static/RF/rf1.jpeg)
+![RF02](static/RF/rf2.jpeg)
+![RF03](static/RF/rf3.jpeg)
+![RF04](static/RF/rf4.jpeg)
+
+#### 4.3.2 Requisitos NO funcionales
+
+![RNF01](static/RNF/rnf1.jpeg)
+![RNF02](static/RNF/rnf2.jpeg)
+![RNF03](static/RNF/rnf3.jpeg)
+![RNF04](static/RNF/rnf4.jpeg)
+![RNF05](static/RNF/rnf5.jpeg)
+
+### 4.4 Diagramas de estado
+
 ## 5. Mockup
 
 Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para posteriormente realizar la codificación de la aplicación web. Como páginas principales tomamos:
@@ -89,6 +108,8 @@ Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para 
 - Información de la investigación: En este apartado se dará una información más amplia sobre la investigación que se esté efectuando.
 
 Para la elaboración del prototipo se utilizo la herramienta de figma
+
+
 
 
 
