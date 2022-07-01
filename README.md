@@ -4,7 +4,7 @@
 
 - Eden Palli Livisi 
 - Chura Navarro, Ckaroll Darlene 
-- Moroco Ramosm, Luis Angel
+- Moroco Ramos, Luis Angel
 - Valdivia Quispe, Eduardo Felipe 
 - Valencia Arana, Gabriel Adriano
 
