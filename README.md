@@ -115,7 +115,7 @@ RF04:
 
 ![SARD](static/Diagrams/architectu.jpeg)
 
-### 4.7 Arquitectura de software 
+### 4.7 Base de Datos
 
 
 ## 5. Mockup
