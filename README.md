@@ -74,6 +74,7 @@ El usuario investigador es una persona que puede publicar su proyecto de investi
 Él necesita un token de acceso para ingresar a la plataforma. Su finalidad es ser contactados y exponer su investigación. Pueden ser: Profesores 
 investigadores, Tesistas, Investigadores asociados, etc. 
 
+<!-- 
 ### 4.2 Restricciones 
 
 - El despliegue será local 
@@ -130,7 +131,7 @@ Diagrama de Bade de Datos:
 
 ![SARD](BD/Diagramas/Diagrama_de_Bade_de_Datos.png)
 
-
+-->
 
 ## 5. Mockup
 
@@ -142,9 +143,6 @@ Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para 
 - Información de la investigación: En este apartado se dará una información más amplia sobre la investigación que se esté efectuando.
 
 Para la elaboración del prototipo se utilizo la herramienta de Figma: https://www.figma.com/file/hVSpPX0azzJy9hBA2FByNh/BE-RESEARCHER?node-id=0%3A1
-
-
-
 
 
 
