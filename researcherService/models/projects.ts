@@ -22,28 +22,35 @@ const Project : any = iDataBase.define('Project', {
     type: DataTypes.STRING
   },
   antecedentes: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: 'antecedentes pw'
   },
   descripcion: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: 'description'
   },
   idF: {
     type: DataTypes.STRING
   },
   financiacion: {
-    type: DataTypes.FLOAT
+    type: DataTypes.FLOAT,
+    defaultValue: 5844.33
   },
   fechaPubli: {
-    type: DataTypes.DATEONLY
+    type: DataTypes.DATEONLY,
+    defaultValue: '2022-07-22'
   },
   fechaInit: {
-    type: DataTypes.DATEONLY
+    type: DataTypes.DATEONLY,
+    defaultValue: '2022-07-22'
   },
   fechaFin: {
-    type: DataTypes.DATEONLY
+    type: DataTypes.DATEONLY,
+    defaultValue: '2022-07-22'
   },
   vacantes: {
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
+    defaultValue: 0
   }
 }, {
   freezeTableName: true,

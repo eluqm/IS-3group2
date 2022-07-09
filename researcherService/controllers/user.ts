@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import User from "../models/user";
 
-export const postNewUser = async (req: Request, res: Response) : Promise<any> => {
+export const postNewUser = async (req: Request, res: Response): Promise<any> => {
   const { body } = req;
   try {
     const exist = await User.findOne({
@@ -18,16 +18,15 @@ export const postNewUser = async (req: Request, res: Response) : Promise<any> =>
       });
     } else {
       return res.status(400).json({
-        body,
         msg: `The user of ${body.user} exist`
-      })
+      });
     }
   } catch (error : any) {
     throw new Error(error);
   }
 }
 
-export const updateUser = async (req : Request, res : Response) : Promise<any> => {
+export const updateUser = async (req : Request, res : Response): Promise<any> => {
   const { id } = req.params
   const { body } = req;
   try {
@@ -44,7 +43,7 @@ export const updateUser = async (req : Request, res : Response) : Promise<any> =
     } else {
       await exist.update(body);
       res.json({
-        msg: `The user with id ${id} doesn't exist`
+        msg: `Changes made in ${id} user`
       });
     }
   } catch (error : any) {
@@ -52,7 +51,7 @@ export const updateUser = async (req : Request, res : Response) : Promise<any> =
   }
 }
 
-export const authenticateUser = async (req : Request, res : Response) : Promise<any> => {
+export const authenticateUser = async (req : Request, res : Response): Promise<any> => {
   const { body } = req;
   try {
     const exist = await User.findOne({
