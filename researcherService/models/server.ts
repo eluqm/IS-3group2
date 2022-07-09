@@ -1,10 +1,14 @@
 import express, { Application } from 'express';
+import iRouter from "../routes/user";
 import cors from 'cors';
 import iDataBase from "../db/connection";
 
 class ServerForMicroservice {
   private application: Application;
   readonly port: string | number | undefined;
+  private apiPaths = {
+    user: '/res'
+  }
 
   constructor() {
     this.application = express();
@@ -35,9 +39,16 @@ class ServerForMicroservice {
     this.application.use(express.static('public'));
   }
 
+  routes() : void {
+    this.application.use(
+      this.apiPaths.user, iRouter
+    )
+  }
+
   init() : void {
     this.dbConnection().then()
     this.middlewares();
+    this.routes();
     this.listenServer();
   }
 }

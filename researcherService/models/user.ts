@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import iDataBase from "../db/connection";
 
-const iUser : any = iDataBase.define('User', {
+const User : any = iDataBase.define('User', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -20,16 +20,20 @@ const iUser : any = iDataBase.define('User', {
     type: DataTypes.DATEONLY
   },
   emailcontacto: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: ''
   },
   areaRese: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: ''
   },
   insitucion: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: ''
   },
   sobremi: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: ''
   }
 }, {
   freezeTableName: true,
@@ -37,4 +41,4 @@ const iUser : any = iDataBase.define('User', {
   tableName: 'users'
 });
 
-export default iUser;
+export default User;
