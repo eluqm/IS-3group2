@@ -26,3 +26,51 @@ export const postNewUser = async (req: Request, res: Response) : Promise<any> =>
     throw new Error(error);
   }
 }
+
+export const updateUser = async (req : Request, res : Response) : Promise<any> => {
+  const { id } = req.params
+  const { body } = req;
+  try {
+    const exist = await User.findByPk(id);
+    if (!exist) {
+      return res.status(400).json({
+        msg: `The user with id ${id} doesn't exist`
+      });
+    }
+    if (exist?.get('user') == body.user) {
+      return res.status(400).json({
+        msg: `The user ${body.user} is already in use`
+      });
+    } else {
+      await exist.update(body);
+      res.json({
+        msg: `The user with id ${id} doesn't exist`
+      });
+    }
+  } catch (error : any) {
+    throw new Error(error);
+  }
+}
+
+export const authenticateUser = async (req : Request, res : Response) : Promise<any> => {
+  const { body } = req;
+  try {
+    const exist = await User.findOne({
+      where: {
+        user : body.user,
+        pass : body.pass
+      }
+    });
+    if (!exist) {
+      return res.status(400).json({
+        msg: `The user with user ${body.user} doesn't exists`
+      });
+    } else {
+      res.json({
+        msg: `The user ${body.user} already for start session`
+      });
+    }
+  } catch (error : any) {
+    throw new Error(error);
+  }
+}
