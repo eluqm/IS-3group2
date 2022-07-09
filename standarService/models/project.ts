@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import iDataBase from "../db/connection";
 
-const Project = iDataBase.define('Project', {
+const Project : any = iDataBase.define('Project', {
   idDoc: {
     type: DataTypes.INTEGER,
     primaryKey: true,

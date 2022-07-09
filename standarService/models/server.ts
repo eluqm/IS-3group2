@@ -25,17 +25,18 @@ class ServerForMicroservice {
 
   async dbConnection() : Promise<void> {
     try {
-      await iDataBase.authenticate();
-      console.log(`Authentication server OK DataBase ${this.port}`);
+      await iDataBase.authenticate().then(e => {
+        console.log(`Authentication server OK DataBase ${this.port}`);
+      });
     } catch (error : any) {
         throw new Error(error);
     }
   }
 
   middlewares() : void {
-    this.application.use( cors());
-    this.application.use( express.json());
-    this.application.use( express.static('public'));
+    this.application.use(cors());
+    this.application.use(express.json());
+    this.application.use(express.static('public'));
   }
 
   routes() {

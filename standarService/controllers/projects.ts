@@ -48,7 +48,7 @@ export const putLoveProjectById = async (req: Request, res: Response) : Promise<
       });
       return res.json({
         msg: `the like to project with id ${id} processed`
-      })
+      });
     }
   } catch (error : any) {
     throw new Error(error);
