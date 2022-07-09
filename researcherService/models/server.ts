@@ -30,9 +30,9 @@ class ServerForMicroservice {
   }
 
   middlewares() : void {
-    this.application.use( cors());
-    this.application.use( express.json());
-    this.application.use( express.static('public'));
+    this.application.use(cors());
+    this.application.use(express.json());
+    this.application.use(express.static('public'));
   }
 
   init() : void {

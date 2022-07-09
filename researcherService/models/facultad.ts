@@ -1,23 +1,19 @@
 import { DataTypes } from "sequelize";
 import iDataBase from "../db/connection";
 
-const Project : any = iDataBase.define('Project', {
-  idDoc: {
+const Facultad : any = iDataBase.define('Facultad', {
+  idF: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true
-  },
-  Likes: {
-    type: DataTypes.INTEGER
+  name: {
+    type: DataTypes.STRING
   }
 }, {
   freezeTableName: true,
   timestamps: false,
-  tableName: 'projectResearch'
+  tableName: 'facultad'
 });
 
-export default Project;
+export default Facultad;
