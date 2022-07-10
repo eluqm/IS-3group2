@@ -50,3 +50,34 @@ export const updateProject = async (req: Request, res: Response): Promise<any> =
     throw new Error(error);
   }
 }
+
+export const getMineProjects = async (req: Request, res: Response): Promise<any> => {
+  const { body } = req;
+  try {
+    const projects = await Project.findAll({
+      where: {
+        id: body.id
+      }
+    });
+    if (!projects) {
+      res.json({
+        msg: `The researcher id ${body.id} hasn't projects`
+      });
+    } else {
+      res.json({
+        projects
+      });
+    }
+  } catch (error: any) {
+    throw new Error(error);
+  }
+}
+
+export const deleteProjectById = async (req: Request, res: Response): Promise<any> => {
+  const { id } = req.params;
+  try {
+
+  } catch (error: any) {
+    throw new Error(error);
+  }
+}
