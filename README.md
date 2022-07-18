@@ -12,7 +12,7 @@
 
 ### 2.1 Contexto
 
-Las investigaciones en LATAM sobre la producción científica en estudiantes universitarios muestras 
+Las investigaciones en LATAM sobre la producción científica en estudiantes universitarios muestran 
 que son pocos los alumnos que pueden hacer ciencia por diferentes motivos como la falta inversión, falta de ayuda o motivación.
 En este proyecto abordaremos el problema de la falta de promoción de proyectos impulsados por profesores de las escuelas 
 profesionales.
