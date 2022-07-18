@@ -69,11 +69,11 @@ export const authenticateUser = async (req : Request, res : Response): Promise<a
       const idU: number = exist.get('id');
       const nameU: string = exist.get('namecompleto');
       const emailU: string = exist.get('user');
-      const key: string = process.env.ACCESS_TOKEN_SECRET || 'perukistan';
-      const key1: string = process.env.REFRESH_TOKEN_SECRET || 'perusalen';
+      const key = process.env.ACCESS_TOKEN_SECRET || 'perukistan';
+      const key1 = process.env.REFRESH_TOKEN_SECRET || 'perusalen';
 
-      const accToken: any = jwt.sign({idU, nameU, emailU}, key, {expiresIn: '20s'});
-      const refToken: any = jwt.sign({idU, nameU, emailU}, key1, {expiresIn: '1d'});
+      const accToken = jwt.sign({idU, nameU, emailU}, key, {expiresIn: '20s'});
+      const refToken = jwt.sign({idU, nameU, emailU}, key1, {expiresIn: '1d'});
 
       await exist.update({refreshtoken: refToken});
       res.cookie('refToken', refToken, {
@@ -82,7 +82,8 @@ export const authenticateUser = async (req : Request, res : Response): Promise<a
         secure: true
       });
       res.json({
-        accToken
+        //accToken
+        refToken
       });
     }
   } catch (error : any) {
