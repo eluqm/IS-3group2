@@ -1,0 +1,16 @@
+/*
+* Style For Footer.tsx
+*/
+
+.Footer {
+    font-family: "Courier New", sans-serif;
+    width: 90%;
+    text-align: center;
+    background: black;
+}
+
+.Footer-parr {
+    text-align: left;
+    margin: 20px;
+    color: aliceblue;
+}

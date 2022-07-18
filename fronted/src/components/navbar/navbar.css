@@ -1,0 +1,15 @@
+/*
+* Style For navbar.tsx
+*/
+
+.Navbar {
+    width: 100%;
+    background: #61dafb;
+}
+
+.CNav-Title {
+    font-size: large;
+    font-family: Cantarell;
+    text-space: 5 px;
+}
+

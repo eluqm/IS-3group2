@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import FooterField from "./components/footer/footer";
+import CNavbar from "./components/navbar/navbar";
+
 import './App.css';
 
-function App() {
+import FoTx from "./static/text";
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>Fronted For BeResearcher</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = {'MainApp'}>
+      <CNavbar title = {'BeResearcher'}></CNavbar>
+      <FooterField question={'Footer'}></FooterField>
     </div>
   );
-}
+};
 
 export default App;
