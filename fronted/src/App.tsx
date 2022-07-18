@@ -2,15 +2,15 @@ import React from 'react';
 import FooterField from "./components/footer/footer";
 import CNavbar from "./components/navbar/navbar";
 
-import './App.css';
+import Button from "react-bootstrap/Button";
 
-import FoTx from "./static/text";
+import './App.css';
 
 const App: React.FC = () => {
   return (
     <div className = {'MainApp'}>
       <CNavbar title = {'BeResearcher'}></CNavbar>
-      <FooterField question={'Footer'}></FooterField>
+      <FooterField question={'Footer'} message={'FooterMessage'}></FooterField>
     </div>
   );
 };

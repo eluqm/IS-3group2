@@ -2,14 +2,31 @@
 * Style For navbar.tsx
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+
 .Navbar {
     width: 100%;
-    background: #61dafb;
 }
 
 .CNav-Title {
-    font-size: large;
-    font-family: Cantarell;
-    text-space: 5 px;
+    font-family: 'Bayon', sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+    margin: 20px 0;
+    color: black;
 }
+
+.items {
+    float: left;
+}
+
+.it {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
 
