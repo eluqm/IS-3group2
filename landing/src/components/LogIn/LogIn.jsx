@@ -20,7 +20,7 @@ const LogIn = () => {
           <Icon to="/">BeResearcher</Icon>
 
           <FormContent>
-            <Form action="#">
+            <Form action="landing/src/components/LogIn/LogIn#">
               <H1>Perfil del Investigador</H1>
 
               <Label htmlFor="for">Nombre de Usuario</Label>
