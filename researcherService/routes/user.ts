@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { authenticateUser, postNewUser, updateUser} from "../controllers/user";
-
 import { postNewProject, updateProject, getMineProjects } from "../controllers/project";
+
+import { verifytoken } from "../middleware/verifytoken";
 
 const iRouter : Router = Router();
 

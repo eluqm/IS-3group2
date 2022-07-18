@@ -1,5 +1,7 @@
-import { Request, Response } from "express";
-import User from "../models/user";
+import { Request, Response } from 'express';
+import User from '../models/user';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export const postNewUser = async (req: Request, res: Response): Promise<any> => {
   const { body } = req;
@@ -61,14 +63,28 @@ export const authenticateUser = async (req : Request, res : Response): Promise<a
       }
     });
     if (!exist) {
-      console.log(`The user with user ${body.user} doesn't exists`); //
       return res.status(400).json({
         msg: `The user with user ${body.user} doesn't exists`
       });
     } else {
-      console.log(`The user with user ${body.user} doesn't exists`) //
+      const idU: number = exist.get('id');
+      const nameU: string = exist.get('namecompleto');
+      const emailU: string = exist.get('user');
+      const key: string = process.env.ACCESS_TOKEN_SECRET || 'perukistan';
+      const key1: string = process.env.REFRESH_TOKEN_SECRET || 'perusalen';
+
+      const accToken: any = jwt.sign({idU, nameU, emailU}, key, {expiresIn: '1d'});
+      const refToken: any = jwt.sign({idU, nameU, emailU}, key1, {expiresIn: '1d'});
+
+      await exist.update({refreshtoken: refToken});
+      res.cookie('refToken', refToken, {
+        httpOnly: true,
+        maxAge: 60*60*60,
+        secure: true
+      });
       res.json({
-        msg: `The user ${body.user} already for start session`
+        msg:  `The user ${body.user} already for start session`,
+        accToken
       });
     }
   } catch (error : any) {

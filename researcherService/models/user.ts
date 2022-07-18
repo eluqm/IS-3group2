@@ -34,6 +34,10 @@ const User : any = iDataBase.define('User', {
   sobremi: {
     type: DataTypes.STRING,
     defaultValue: ''
+  },
+  refreshtoken: {
+    type: DataTypes.STRING,
+    defaultValue: ''
   }
 }, {
   freezeTableName: true,
