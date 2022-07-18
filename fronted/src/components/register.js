@@ -30,7 +30,6 @@ const Register = () => {
       if (error.response) {
         console.log(`error :'v  ${error.response.data}`)
       }
-      throw new Error(error);
     }
   }
 
