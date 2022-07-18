@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import redirect from "react-router-dom/es/Redirect";
 
 const Login = () => {
   const [user, setUser] = useState('');
@@ -15,15 +16,9 @@ const Login = () => {
       await axios.post('http://localhost:5000/res/user/auth', {
         user: user,
         pass: password
-      }).then(() => alert('success')).catch(
-        (error) => console.log(`new error in ${error}`)
-      );
-
-      setMess(`Ingresando como ${user}`);
-      setUser('');
-      setPassword('');
-
-      history.push('/dashboard')
+      });
+      history.push('/dashboard');
+      setMess(`Ingresando como ${user}`)
     } catch (error) {
       if (error.response) {
         setMess(`Error al ingresar con ${user}`)

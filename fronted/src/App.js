@@ -12,13 +12,13 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={'/login'}>
+        <Route exact path={"/"}>
           <Login/>
         </Route>
-        <Route path={'/register'}>
+        <Route path={"/register"}>
           <Register/>
         </Route>
-        <Route path={'/dashboard'}>
+        <Route path={"/dashboard"}>
           <Navbar/>
           <Dashboard/>
         </Route>

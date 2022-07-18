@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import {NextFunction, Request, Response} from "express";
 
 export const verifytoken = (req: any, res: any, next: any) => {
   const authHeader = req.headers['authorization'];
@@ -11,5 +12,5 @@ export const verifytoken = (req: any, res: any, next: any) => {
       return res.sendStatus(403);
     req.emailU = decoded.emailU;
     next();
-  })
+  });
 };

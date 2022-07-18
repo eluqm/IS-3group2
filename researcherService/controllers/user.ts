@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import User from '../models/user';
-import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 export const postNewUser = async (req: Request, res: Response): Promise<any> => {
@@ -73,22 +72,23 @@ export const authenticateUser = async (req : Request, res : Response): Promise<a
       const key: string = process.env.ACCESS_TOKEN_SECRET || 'perukistan';
       const key1: string = process.env.REFRESH_TOKEN_SECRET || 'perusalen';
 
-      const accToken: any = jwt.sign({idU, nameU, emailU}, key, {expiresIn: '1d'});
+      const accToken: any = jwt.sign({idU, nameU, emailU}, key, {expiresIn: '20s'});
       const refToken: any = jwt.sign({idU, nameU, emailU}, key1, {expiresIn: '1d'});
 
       await exist.update({refreshtoken: refToken});
       res.cookie('refToken', refToken, {
         httpOnly: true,
-        maxAge: 60*60*60,
+        maxAge: 60*60*1000,
         secure: true
       });
       res.json({
-        msg:  `The user ${body.user} already for start session`,
         accToken
       });
     }
   } catch (error : any) {
-    throw new Error(error);
+    res.status(404).json({
+      msg: "Error al iniciar sesión"
+    });
   }
 }
 
