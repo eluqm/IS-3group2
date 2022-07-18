@@ -6,6 +6,7 @@ const Register = () => {
   const [name, setName] = useState('');
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
+  const [mess, setMess] = useState('');
 
   const history = useHistory();
 
@@ -13,22 +14,24 @@ const Register = () => {
     e.preventDefault();
     const date = new Date().toISOString().slice(0, 10);
     try {
-      console.log(`error :'v  ${name} ${user} ${password} ${date}`)
       await axios.post('http://localhost:5000/res/user', {
         namecompleto: name,
         pass: password,
         user: user,
         fecharegistro: date
-      });
+      }).then(() => alert('success')).catch(
+        (error) => console.log(`new error in ${error}`)
+      );
 
+      setMess(`Cuenta Registrada para ${name}`);
       setName('');
       setUser('');
       setPassword('');
 
-      history.push('/');
+      history.push('/login');
     } catch (error) {
       if (error.response) {
-        console.log(`error :'v  ${error.response.data}`)
+        setMess(`Error al registrarse en ${name}`)
       }
     }
   }
@@ -40,6 +43,7 @@ const Register = () => {
           <div className={'column is-centered'}>
             <div className={'column is-4-desktop'}>
               <form onSubmit={Register} className={'box'}>
+                <p className={'has-text-centered'}> {mess} </p>
                 <div className={'field mt-5'}>
                   <label className={'label'}> Nombre </label>
                   <div className={'controls'}>

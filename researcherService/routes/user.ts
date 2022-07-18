@@ -7,7 +7,7 @@ const iRouter : Router = Router();
 
 iRouter.post('/user', postNewUser);
 iRouter.put('/user/:id', updateUser);
-iRouter.get('/user/auth', authenticateUser);
+iRouter.post('/user/auth', authenticateUser);
 
 iRouter.post('/proj', postNewProject);
 iRouter.get('/proj/:id', getMineProjects);

@@ -61,10 +61,12 @@ export const authenticateUser = async (req : Request, res : Response): Promise<a
       }
     });
     if (!exist) {
+      console.log(`The user with user ${body.user} doesn't exists`); //
       return res.status(400).json({
         msg: `The user with user ${body.user} doesn't exists`
       });
     } else {
+      console.log(`The user with user ${body.user} doesn't exists`) //
       res.json({
         msg: `The user ${body.user} already for start session`
       });
