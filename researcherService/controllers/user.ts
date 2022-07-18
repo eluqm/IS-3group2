@@ -91,3 +91,21 @@ export const authenticateUser = async (req : Request, res : Response): Promise<a
     throw new Error(error);
   }
 }
+
+export const Logout = async (req : Request, res : Response) => {
+  const refreshToken = req.cookies.refToken;
+  if (!refreshToken)
+    res.sendStatus(204);
+  const user = await User.findOne({
+    where: {
+      refreshtoken: refreshToken
+    }
+  });
+  if (!user)
+    res.sendStatus(204);
+  await user.update({refreshtoken: null});
+  res.clearCookie('refreshToken');
+  return res.sendStatus(
+    200
+  );
+}

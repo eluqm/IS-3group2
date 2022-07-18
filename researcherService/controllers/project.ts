@@ -1,6 +1,17 @@
 import { Request, Response } from "express";
 import Project from "../models/projects";
 
+export const getProjects = async (req: Request, res: Response): Promise<any> => {
+  try {
+    const projects = await Project.findAll();
+    res.json(
+      projects
+    );
+  } catch (error: any) {
+    throw new Error(error);
+  }
+}
+
 export const postNewProject = async (req: Request, res: Response): Promise<any> => {
   const { body } = req;
   try {

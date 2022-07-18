@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import iRouter from "../routes/user";
 import cors from 'cors';
 import iDataBase from "../db/connection";
+import cookieParser from "cookie-parser";
 
 const corsOptions ={
   origin: 'http://localhost:3000',
@@ -52,6 +53,7 @@ class ServerForMicroservice {
   }
 
   init() : void {
+    this.application.use(cookieParser());
     this.dbConnection().then()
     this.middlewares();
     this.routes();
