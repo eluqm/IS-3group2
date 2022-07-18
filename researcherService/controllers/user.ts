@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import User from "../models/user";
 
 export const postNewUser = async (req: Request, res: Response): Promise<any> => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   const { body } = req;
   try {
     const exist = await User.findOne({

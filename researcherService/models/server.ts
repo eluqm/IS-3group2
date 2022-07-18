@@ -3,6 +3,12 @@ import iRouter from "../routes/user";
 import cors from 'cors';
 import iDataBase from "../db/connection";
 
+const corsOptions ={
+  origin: 'http://localhost:3000',
+  credentials: true,            //access-control-allow-credentials:true
+  optionSuccessStatus: 200
+}
+
 class ServerForMicroservice {
   private application: Application;
   readonly port: string | number | undefined;
@@ -34,7 +40,7 @@ class ServerForMicroservice {
   }
 
   middlewares() : void {
-    this.application.use(cors());
+    this.application.use(cors(corsOptions));
     this.application.use(express.json());
     this.application.use(express.static('public'));
   }
