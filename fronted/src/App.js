@@ -1,26 +1,40 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Login from './components/login';
-import Register from "./components/register";
-import Dashboard from "./components/dashboard";
-import Navbar from "./components/navbar";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Login from './components/Login';
 
-/*
-*  The Main Function for React Application
-* */
+import Features from "./components/Features";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Sign from "./components/Sign";
+import Nav from "./components/Nav";
+import Dashboard from "./pages/Dashboard";
+import AddProject from "./pages/AddProject";
+import FrecuentAsk from "./components/FrecuentAsk";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={"/"}>
+        <Route exact path={'/'}>
+          <Header/>
+          <Features/>
+          <FrecuentAsk/>
+          <Footer/>
+        </Route>
+        <Route path={'/login'}>
+          <Nav/>
           <Login/>
+          <Footer/>
         </Route>
-        <Route path={"/register"}>
-          <Register/>
+        <Route path={'/sign'}>
+          <Nav/>
+          <Sign/>
+          <Footer/>
         </Route>
-        <Route path={"/dashboard"}>
-          <Navbar/>
+        <Route path={'/dash'}>
           <Dashboard/>
+        </Route>
+        <Route path={'/newproj'}>
+         <AddProject/>
         </Route>
       </Switch>
     </BrowserRouter>
