@@ -66,7 +66,7 @@ El sistema cuenta con (2) tipos de usuarios. Sus diferencias son notables.
 
 Este usuario podrá acceder directamente al mostrador de investigaciones en la universidad, podrá filtrarlas, buscarlas y contactarse
 con los profesores investigadores. Ellos no cuentan con tokens de acceso. Se limitan a informarse.
-Podrían ser: Estudiantes universitarios, Tesistas, Público en general, profesores, empresas interesadas, etc.   
+Podrían ser: Estudiantes universitarios, Tesistas, Público en general, profesores, empresas interesadas, etc. Abierto al público.   
  
 #### 4.1.2 Usuario - Investigador 
 
