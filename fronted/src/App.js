@@ -27,7 +27,6 @@ function App() {
         <Route path={'/login'}>
           <Nav />
           <Login />
-          <Footer />
         </Route>
 
         <Route path={'/sign'}>
