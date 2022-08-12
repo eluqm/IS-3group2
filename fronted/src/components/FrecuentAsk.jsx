@@ -1,9 +1,9 @@
 import Ask from "./Ask";
 
 const Asks = [
-  { id: 1, ask: 'Primera pregunta?', ans: 'Respuesta 1'},
-  { id: 2, ask: 'Segunda pregunta?', ans: 'Respuesta 2'},
-  { id: 3, ask: 'Tercera pregunta?', ans: 'Respuesta 3'}
+  { id: 1, ask: '¿Quiénes pueden participar?', ans: 'Pueden participar todas las personas con un proyecto o investigación que deseen compartir para recibir apoyo o consejos de otros investigadores o requieran de estudiantes de pregrado o posgrado para participar en la investigación'},
+  { id: 2, ask: '¿Es necesario registrarme?', ans: 'No es necesario registrarse para participar en la plataforma, pero si para recibir apoyo o consejos de otros investigadores o requerir de estudiantes de pregrado o posgrado para participar en la investigación'},
+  { id: 3, ask: '¿Como puedo unirme al grupo de desarrollo?', ans: 'Puedes unirte al grupo de desarrollo de BeResearcher enviando un correo a beresearcher@gmail.com y te enviaremos una invitación para que te unas a nuestro grupo de desarrollo'},
 ]
 
 export default function FrecuentAsk() {

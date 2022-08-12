@@ -1,9 +1,9 @@
 import { Popover } from '@headlessui/react'
 
 const navigation = [
-  { name: 'Product', href: '/login' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' }
+  { name: 'Home', href: '/header' },
+  { name: 'Estudiante', href: '#' },
+  { name: 'Investigador', href: '/login' }
 ]
 
 export default function Nav() {
@@ -26,7 +26,7 @@ export default function Nav() {
                 </a>
               ))}
               <a href="/login" className="font-medium text-cyan-700 hover:text-cyan-600">
-                Log in
+                Registrarse
               </a>
             </div>
           </nav>

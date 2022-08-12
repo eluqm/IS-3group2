@@ -2,27 +2,27 @@ import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@her
 
 const features = [
   {
-    name: 'Competitive exchange rates',
+    name: 'Posgrado',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'El desarrollo de nuevas ideas surge en las conversación de otros profesionales y los trabajos que van realizando.',
     icon: GlobeAltIcon,
   },
   {
-    name: 'No hidden fees',
+    name: 'Pregrado',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'Unete a una investigación para que puedas ver el desarrollo de una investigación.',
     icon: ScaleIcon,
   },
   {
-    name: 'Transfers are instant',
+    name: 'Actualizado',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'Be Researcher busca ser una fuente de recomendación para investigadores y futuros researchers.',
     icon: LightningBoltIcon,
   },
   {
-    name: 'Mobile notifications',
+    name: 'Conecta con Investigadores',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      'Be Researcher conecta a inestigadores de distintas áreas, universidades y grados',
     icon: AnnotationIcon,
   },
 ]
@@ -34,11 +34,10 @@ export default function Features() {
         <div className="lg:text-center">
           <h2 className="text-base text-cyan-700 font-semibold tracking-wide uppercase">Transactions</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            A better way to send money
+          Un medio para la ciencia
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
+           Buscamos impulsar la investigación independientemente del grado, de la experiencia y área
           </p>
         </div>
 
