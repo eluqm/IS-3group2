@@ -74,6 +74,16 @@ El usuario investigador es una persona que puede publicar su proyecto de investi
 Él necesita un token de acceso para ingresar a la plataforma. Su finalidad es ser contactados y exponer su investigación. Pueden ser: Profesores 
 investigadores, Tesistas, Investigadores asociados, etc. 
 
+## 5. Requisitos
+
+### 5.1 Requisitos funcionales
+- ✅ RF01 - Registrar Cuenta: El usuario (investigador) debe registrar una cuenta. Registra sus datos personales y de acceso.
+- ✅ RF02 - Publicar Investigación : El usuario (investigador) debe poder publicar una investigación.
+- ✅ RF03 - Buscar investigación: El usuario (estudiante) debe poder buscar una investigación.
+- ✅ RF04 - Contactar Investigador: El usuario (estudiante) debe poder contactar a un investigador.
+- ✅ RF05 - Visualizar Publicaciones: El usuario (estudiante) y los investigadores debe poder visualizar las publicaciones.
+- ✅ RF06 - Edición de la Publicación: El usuario (investigador) debe poder editar la publicación.
+- ✅ RF07 - Visualizar contenido completo de la publicación: El usuario o investigador puede ver de manera completa la información de un investigación/ paper/ proyecto 
 <!-- 
 ### 4.2 Restricciones 
 
@@ -133,7 +143,7 @@ Diagrama de Bade de Datos:
 
 -->
 
-## 5. Mockup
+## 6. Mockup
 
 Con base en los requisitos obtenidos, se elaboró un Muckup como prototipo para posteriormente realizar la codificación de la aplicación web. Como páginas principales tomamos:
 
