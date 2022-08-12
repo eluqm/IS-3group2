@@ -15,3 +15,11 @@ export function generateHeaderForRequest(identifier) {
 export function deleteItemFromLSByIdent(identifier) {
 	localStorage.removeItem(identifier);
 }
+
+export function generateDateToday() {
+	return new Date().toISOString().slice(0, 10);
+}
+
+export function formatDate(date) {
+	return date.toISOString().slice(0, 10);
+}

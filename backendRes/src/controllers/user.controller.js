@@ -47,9 +47,19 @@ export const updateUser = async (req, res) => {
       return res.status(400).json({msg: `The user ${body.user} already in use`});
     else {
       await exist.update(body);
-      res.json({msg: `Changes made in ${body.id}`})
+      res.status(200).json({msg: `Changes made in ${body.id}`})
     }
   } catch (err) {
     res.status(404).json({msg: 'Error en updateUser'});
+  }
+}
+
+export const getDataFromUserById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await User.findByPk(id);
+    res.status(200).json(data);
+  } catch (err) { 
+    res.status(404).json({msg: 'Error en getDataFromUserById'});
   }
 }

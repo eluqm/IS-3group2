@@ -13,11 +13,20 @@ export const deleteItemById = async (req, res) => {
   }
 }
 
-export const getProjectsById = async (req, res) => {
-  const {id} = req.params;
+export const getAllProjects = async (req, res) => {
   try {
     const projects = await Project.findAll();
     res.status(200).json(projects);
+  } catch (err) {
+    res.status(404).json({msg: 'Error in getAllProjects'})
+  }
+}
+
+export const getProjectsById = async (req, res) => {
+  const {id} = req.params;
+  try {
+    const data = await Project.findAll({where:{id: id}});
+    res.status(200).json(data);
   } catch (err) {
     res.status(404).json({msg: 'Error in getProjectsById'})
   }

@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from './components/Login';
 
 import Features from "./components/Features";
@@ -8,34 +8,50 @@ import Sign from "./components/Sign";
 import Nav from "./components/Nav";
 import Dashboard from "./pages/Dashboard";
 import AddProject from "./pages/AddProject";
-import FrecuentAsk from "./components/FrecuentAsk";
+import Card from "./components/Card";
+import Test_Component from "./pages/Testing";
+import Perfil from "./pages/Perfil";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
+
         <Route exact path={'/'}>
-          <Header/>
-          <Features/>
-          <FrecuentAsk/>
-          <Footer/>
+          <Header />
+          <Features />
+          <Card />
+          <Footer />
         </Route>
+
         <Route path={'/login'}>
-          <Nav/>
-          <Login/>
-          <Footer/>
+          <Nav />
+          <Login />
+          <Footer />
         </Route>
+
         <Route path={'/sign'}>
-          <Nav/>
-          <Sign/>
-          <Footer/>
+          <Nav />
+          <Sign />
+          <Footer />
         </Route>
+
         <Route path={'/dash'}>
-          <Dashboard/>
+          <Dashboard />
         </Route>
-        <Route path={'/newproj'}>
-         <AddProject/>
+
+        <Route path={'/addproj'}>
+          <AddProject />
         </Route>
+
+        <Route path={'/test'}>
+          <Test_Component />
+        </Route>
+
+        <Route path={'/perfil'}>
+          <Perfil />
+        </Route>
+
       </Switch>
     </BrowserRouter>
   );

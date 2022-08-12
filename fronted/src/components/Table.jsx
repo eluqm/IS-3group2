@@ -14,19 +14,22 @@ const navigation = [
   { name: 'Acción' }
 ]
 
-export default function Table() {
+export default function Table(props) {
+  const { id } = props;
   const [vecProj, setVectProj] = useState([]);
-  
+
   useEffect(() => {
     const fetch = async () => {
       const header = generateHeaderForRequest('token');
-      const data = await axios.get('http://localhost:5001/re/3/proj', {
+      const data = await axios.get(`http://localhost:5001/re/${id}/proj`, {
         headers: header
       });
       setVectProj(data.data);
     }
     fetch();
   }, []);
+
+  console.log(id);
 
   return (
     <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
