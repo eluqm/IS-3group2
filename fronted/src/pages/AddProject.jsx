@@ -4,42 +4,35 @@ import jwtDecode from "jwt-decode";
 import { useState } from "react";
 import Label from "../components/Label";
 import Subtitle from "../components/Subtitle";
-import { generateDateToday, formatDate } from "../utils/utils";
+import { generateDateToday } from "../utils/utils";
 import { useHistory } from "react-router-dom";
-
-const divclas = "relative z-0 mb-7 w-full group";
-const int = "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-700 dark:border-gray-600 dark:focus:border-cyan-700 focus:outline-none focus:ring-0 focus:border-cyan-800 peer";
+import { facultades } from "../utils/data.util";
+import { divclas, int } from "../utils/styles.utils";
+import getDateType from "../utils/types.utils";
 
 export default function AddProject() {
   const data = localStorage.getItem('token');
   const decoded = jwtDecode(data);
-
-  const idF = 2;
   const id = decoded.datos.id;
 
-  const [titulo, setTitulo] = useState('xGA: ...');
-  const [antecedentes, setAntec] = useState('My Gzu :v');
-  const [descripcion, setDescr] = useState('Gaa chupetín chamba es chamba');
+  const [titulo, setTitulo] = useState('UFSNET: KMeans vs KNN, Una revisión de la Literatura');
+  const [antecedentes, setAntec] = useState('El Algoritmo de KMeans se aplica en problemas de Cloustering ...');
+  const [descripcion, setDescr] = useState('En este Artículo intentaremos comparar ambos algoritmos y analizar todas sus métricas ...');
   const [financiacion, setFinan] = useState(9000);
   const [vacantes, setVac] = useState(6);
-  
-  const todayDate = new Date(); 
-  const formatDate = todayDate.getDate() < 10 ? `0${todayDate.getDate()}`:todayDate.getDate();
-  const formatMonth = todayDate.getMonth() < 10 ? `0${todayDate.getMonth()}`: todayDate.getMonth();
-  const formattedDate = [todayDate.getFullYear(), formatMonth, formatDate].join('-');
-  
-  const [fechaInit, setInit] = useState(formattedDate);
-  const [fechaFin, setFin] = useState(formattedDate);
+  const [idF, setIdF] = useState(1);
+  const [fechaInit, setInit] = useState(getDateType());
+  const [fechaFin, setFin] = useState(getDateType());
 
   const history = useHistory();
-  
+
   const AddProject = async (e) => {
     e.preventDefault();
     const fechaPubli = generateDateToday();
 
     try {
       await axios.post('http://localhost:5001/res/addproj', {
-        id, titulo, antecedentes, descripcion, idF, financiacion, fechaPubli, fechaInit, fechaFin, vacantes  
+        id, titulo, antecedentes, descripcion, idF, financiacion, fechaPubli, fechaInit, fechaFin, vacantes
       }).then(() => alert(`Proyecto ${titulo} creado!`)).catch(
         (err) => console.log(`error! ${err}`)
       );
@@ -103,7 +96,7 @@ export default function AddProject() {
                   type={'date'}
                   required={true}
                   value={fechaInit} onChange={(e) => setInit(e.target.value)}
-                  className={int}/>
+                  className={int} />
                 <Label name={'Fecha de inicio'} />
               </div>
               <div className={divclas}>
@@ -125,8 +118,20 @@ export default function AddProject() {
                   className={int} />
                 <Label name={'Número de Vacantes'} />
               </div>
-            </div>
 
+              <div className={divclas}>
+                <select
+                  required={true}
+                  className={int}
+                  value={idF} onChange={(e) => setIdF(e.target.value)}
+                >
+                  {facultades.map((e) => (
+                    <option value={e.id} > {e.name} </option>
+                  ))}
+                </select>
+                <Label name={'Facultad'} />
+              </div>
+            </div>
             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-cyan-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-800 dark:hover:bg-cyan-900 dark:focus:ring-cyan-900"> Generar Préstamo </button>
           </form>
         </div>

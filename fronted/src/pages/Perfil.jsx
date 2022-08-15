@@ -1,14 +1,15 @@
 import DashNav from "../components/DashNav";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FormLabel from "../components/FormLabel";
-
-const inputstyle = "mt-1 focus:ring-cyan-700 focus:border-cyan-700 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md";
-const inputstyle2 = "focus:ring-cyan-700 focus:border-cyan-700 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300";
-const inputbold = "inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm";
+import { inputstyle, inputstyle2 } from "../utils/styles.utils";
+import jwtDecode from "jwt-decode";
 
 export default function Perfil() {
+  const data = localStorage.getItem('token');
+  const decoded = jwtDecode(data);
+
   const [namecompleto, setName] = useState('');
   const [pass, setPass] = useState('');
   const [user, setUser] = useState('');
@@ -17,10 +18,9 @@ export default function Perfil() {
   const [insitucion, setInsti] = useState('');
   const [sobremi, setSobremi] = useState('');
 
-  const location = useLocation();
   const history = useHistory();
 
-  const id = location.state.id;
+  const id = decoded.datos.id
 
   useEffect(() => {
     const fetch = async () => {
@@ -31,7 +31,7 @@ export default function Perfil() {
       setEmail(x.data.emailcontacto);
       setArea(x.data.areaRese);
       setInsti(x.data.insitucion);
-      setSobremi(x.data.setSobremi);
+      setSobremi(x.data.sobremi);
     }
     fetch();
   }, []);

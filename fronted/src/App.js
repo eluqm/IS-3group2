@@ -11,6 +11,7 @@ import AddProject from "./pages/AddProject";
 import Card from "./components/Card";
 import Test_Component from "./pages/Testing";
 import Perfil from "./pages/Perfil";
+import DetailsProject from "./pages/Details";
 
 function App() {
   return (
@@ -49,6 +50,10 @@ function App() {
 
         <Route path={'/perfil'}>
           <Perfil />
+        </Route>
+
+        <Route path={'/details'}>
+          <DetailsProject />
         </Route>
 
       </Switch>

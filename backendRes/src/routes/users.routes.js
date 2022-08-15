@@ -1,6 +1,6 @@
 import {Router} from "express";
 import {authUser, signNewUser, getDataFromUserById, updateUser} from "../controllers/user.controller.js";
-import {deleteItemById, getProjectsById, postNewProject} from "../controllers/projec.controller.js";
+import {deleteItemById, getProjectsById, postNewProject, getProjectDataById} from "../controllers/projec.controller.js";
 
 import {verifyToken} from "../utils/token.utils.js";
 
@@ -13,6 +13,7 @@ router.put('/re/:id', updateUser);
 
 router.get('/re/:id/proj', verifyToken, getProjectsById);
 router.delete('/re/:id', deleteItemById);
+router.get('/res/:id', getProjectDataById);
 
 router.post('/res/addproj', postNewProject);
 

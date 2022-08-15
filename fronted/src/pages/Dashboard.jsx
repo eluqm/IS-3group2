@@ -10,8 +10,8 @@ export default function Dashboard() {
 
   return (
     <>
-      <DashNav id={decoded.datos.id}/>
-      <Hello name= {decoded.datos.namecompleto} />
+      <DashNav />
+      <Hello name= {`Hola, ${decoded.datos.namecompleto}`} />
       <main>
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <Table id={decoded.datos.id} />

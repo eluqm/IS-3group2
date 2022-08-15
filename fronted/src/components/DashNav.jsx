@@ -11,9 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function DashNav(props) {
-  const { id } = props;
-
+export default function DashNav() {
   const history = useHistory();
 
   const outSession = () => {
@@ -23,12 +21,7 @@ export default function DashNav(props) {
   }
 
   const myPerfil = () => {
-    history.push({
-      pathname: '/perfil',
-      state: {
-        id: id
-      }
-    });
+    history.push('/perfil');
   }
 
   return (

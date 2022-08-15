@@ -9,7 +9,7 @@ export const deleteItemById = async (req, res) => {
     }
     res.json({msg: 'OK'});
   } catch (err) {
-    res.status(404).json({msg: 'Error in delete'})
+    res.status(404).json({msg: 'Error in delete'});
   }
 }
 
@@ -18,7 +18,18 @@ export const getAllProjects = async (req, res) => {
     const projects = await Project.findAll();
     res.status(200).json(projects);
   } catch (err) {
-    res.status(404).json({msg: 'Error in getAllProjects'})
+    res.status(404).json({msg: 'Error in getAllProjects'});
+  }
+}
+
+export const getProjectDataById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await Project.findByPk(id);
+    console.log(data);
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(404).json({msg: 'Error in getProjectDataById'});
   }
 }
 
@@ -28,7 +39,7 @@ export const getProjectsById = async (req, res) => {
     const data = await Project.findAll({where:{id: id}});
     res.status(200).json(data);
   } catch (err) {
-    res.status(404).json({msg: 'Error in getProjectsById'})
+    res.status(404).json({msg: 'Error in getProjectsById'});
   }
 }
 
@@ -61,5 +72,20 @@ export const postNewProject = async (req, res) => {
     }
   } catch (err) {
     res.status(404).json({msg: 'Error en postProject'});
+  }
+}
+
+export const addLabelById = async (req, res) => {
+  const { id } = req.params;
+  const { label } = req.body;
+  try {
+    const exist = await Project.findByPk(id);
+    if (!exist)
+      res.status(400).json({msg: 'No existe el proyecto!'});
+    else {
+      
+    }
+  } catch (err) {
+    res.status(404).json({msg: 'addLabelById'});
   }
 }
