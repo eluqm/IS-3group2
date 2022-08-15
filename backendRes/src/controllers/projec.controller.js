@@ -1,4 +1,6 @@
 import { Project } from "../models/project.js";
+import { Area } from "../models/areas.js";
+import { Participante } from "../models/paticipantes.js";
 
 export const deleteItemById = async (req, res) => {
   const {id} = req.params;
@@ -76,16 +78,43 @@ export const postNewProject = async (req, res) => {
 }
 
 export const addLabelById = async (req, res) => {
-  const { id } = req.params;
-  const { label } = req.body;
+  const { body } = req;
   try {
-    const exist = await Project.findByPk(id);
-    if (!exist)
-      res.status(400).json({msg: 'No existe el proyecto!'});
-    else {
-      
-    }
+    const newLabel = new Area(body);
+    await newLabel.save();
+    res.status(200).json({msg: 'OK'});
   } catch (err) {
-    res.status(404).json({msg: 'addLabelById'});
+    res.status(404).json({msg: 'Error en addLabelById'});
+  }
+}
+
+export const getLabelsById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await Area.findAll({where: {idP: id}});
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(404).json({msg: 'Error en getLabelsById'});
+  }
+}
+
+export const getParticipants = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await Participante.findAll({where: {idP: id}});
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(404).json({msg: 'Error en getParticipants'});
+  }
+}
+
+export const addParticipante = async (req, res) => {
+  const { body } = req;
+  try {
+    const newPart = new Participante(body);
+    await newPart.save();
+    res.status(200).json({msg: 'OK'});
+  } catch (err) {
+    res.status(404).json({msg: 'Error en addParticipante'});
   }
 }
