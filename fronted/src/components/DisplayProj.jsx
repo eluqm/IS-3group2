@@ -19,8 +19,7 @@ export default function DisplayProj(props) {
       <div className="font-bold text-slate-900 text-6xl mx-20">  Proyectos  </div> &nbsp;
       {vecP.map((e) => (
         <RowProject
-          name={e.titulo}
-          id={e.id} />
+          props={e}/>
       ))}
     </div>
   );

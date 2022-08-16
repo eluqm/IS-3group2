@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import LoginPage from "./pages/Login";
 import SignPage from "./pages/SignPage";
 import ProjectsPage from "./pages/Projects";
+import ProjectDetailed from "./pages/ProjectDetailed";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path={'/projects'}>
           <ProjectsPage />
+        </Route>
+        <Route path={'/detailed'}>
+          <ProjectDetailed/>
         </Route>
       </Switch>
     </BrowserRouter>

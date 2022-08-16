@@ -18,7 +18,6 @@ export default function Login() {
 			});
 			saveinLocalStorage('token', res.data.token);
 			history.push('/dash');
-			console.log(res.data.token);
 		} catch (err) {
 			alert('Error al iniciar sesión!');
 		}

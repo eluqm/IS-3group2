@@ -4,4 +4,10 @@ export default function getDateType() {
     const formatMonth = todayDate.getMonth() < 10 ? `0${todayDate.getMonth()}` : todayDate.getMonth();
     const formattedDate = [todayDate.getFullYear(), formatMonth, formatDate].join('-');
     return formattedDate;
-}
+};
+
+export const type = {
+    name: '', 
+    inst: '', 
+    fech: ''
+};
