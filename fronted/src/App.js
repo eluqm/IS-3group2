@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 import Dashboard from "./pages/Dashboard";
 import AddProject from "./pages/AddProject";
 import Card from "./components/Card";
-import Test_Component from "./pages/Testing";
 import Perfil from "./pages/Perfil";
 import DetailsProject from "./pages/Details";
 
@@ -44,16 +43,16 @@ function App() {
           <AddProject />
         </Route>
 
-        <Route path={'/test'}>
-          <Test_Component />
-        </Route>
-
         <Route path={'/perfil'}>
           <Perfil />
         </Route>
 
         <Route path={'/details'}>
           <DetailsProject />
+        </Route>
+
+        <Route path={'/projects'}>
+          <h1> Aquí se listan los proyectos </h1>
         </Route>
 
       </Switch>

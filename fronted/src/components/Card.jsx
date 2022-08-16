@@ -1,4 +1,4 @@
-import { AcademicCapIcon, SearchIcon, LibraryIcon } from "@heroicons/react/outline";
+import { SearchIcon, LibraryIcon } from "@heroicons/react/outline";
 
 export default function Card() {
   return (

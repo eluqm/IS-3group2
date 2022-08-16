@@ -1,3 +1,5 @@
+import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
+
 export const facultades = [
     {id: 1, name: 'Ciencias Biológicas'}, 
     {id: 2, name: 'Enfermería'},
@@ -19,3 +21,45 @@ export const facultades = [
     {id: 18, name: 'Psicología, Relaciones Industriales y Ciencias de la Comunicación'}
 ]
   
+
+export const features = [
+    {
+      name: 'Posgrado',
+      description:
+        'El desarrollo de nuevas ideas surge en las conversación de otros profesionales y los trabajos que van realizando.',
+      icon: GlobeAltIcon,
+    },
+    {
+      name: 'Pregrado',
+      description:
+        'Unete a una investigación para que puedas ver el desarrollo de una investigación.',
+      icon: ScaleIcon,
+    },
+    {
+      name: 'Actualizado',
+      description:
+        'Be Researcher busca ser una fuente de recomendación para investigadores y futuros researchers.',
+      icon: LightningBoltIcon,
+    },
+    {
+      name: 'Conecta con Investigadores',
+      description:
+        'Be Researcher conecta a inestigadores de distintas áreas, universidades y grados',
+      icon: AnnotationIcon,
+    },
+]
+
+export const navigation = [
+    { name: 'Título' },
+    { name: 'Fecha Post' },
+    { name: 'Financiación' },
+    { name: 'Vacantes' },
+    { name: 'Descripción' },
+    { name: 'Likes' },
+    { name: 'Acción' }
+]
+
+export const navigationD = [
+    { name: 'Dashboard', href: '/dash', current: true },
+    { name: '+ Proyectos', href: '/addproj', current: false }
+]

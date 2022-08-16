@@ -1,31 +1,4 @@
-import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
-
-const features = [
-  {
-    name: 'Posgrado',
-    description:
-      'El desarrollo de nuevas ideas surge en las conversación de otros profesionales y los trabajos que van realizando.',
-    icon: GlobeAltIcon,
-  },
-  {
-    name: 'Pregrado',
-    description:
-      'Unete a una investigación para que puedas ver el desarrollo de una investigación.',
-    icon: ScaleIcon,
-  },
-  {
-    name: 'Actualizado',
-    description:
-      'Be Researcher busca ser una fuente de recomendación para investigadores y futuros researchers.',
-    icon: LightningBoltIcon,
-  },
-  {
-    name: 'Conecta con Investigadores',
-    description:
-      'Be Researcher conecta a inestigadores de distintas áreas, universidades y grados',
-    icon: AnnotationIcon,
-  },
-]
+import { features } from '../utils/data.util'
 
 export default function Features() {
   return (

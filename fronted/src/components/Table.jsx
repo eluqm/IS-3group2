@@ -3,16 +3,7 @@ import axios from "axios";
 import Row from "./Row";
 import { generateHeaderForRequest } from "../utils/utils";
 import Caption from "./Caption";
-
-const navigation = [
-  { name: 'Título' },
-  { name: 'Fecha Post' },
-  { name: 'Financiación' },
-  { name: 'Vacantes' },
-  { name: 'Descripción' },
-  { name: 'Likes' },
-  { name: 'Acción' }
-]
+import { navigation } from "../utils/data.util";
 
 export default function Table(props) {
   const { id } = props;

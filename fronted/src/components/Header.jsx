@@ -1,7 +1,3 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-
 import Nav from "./Nav";
 
 const image = require('../assets/Analyze.svg').default;

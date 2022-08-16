@@ -1,11 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import { useHistory } from 'react-router-dom'
 import { deleteItemFromLSByIdent } from '../utils/utils'
-
-const navigation = [
-  { name: 'Dashboard', href: '/dash', current: true },
-  { name: '+ Proyectos', href: '/addproj', current: false }
-]
+import { navigationD } from '../utils/data.util'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -38,7 +34,7 @@ export default function DashNav() {
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map((item) => (
+                        {navigationD.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
