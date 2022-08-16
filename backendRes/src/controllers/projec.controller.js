@@ -118,3 +118,13 @@ export const addParticipante = async (req, res) => {
     res.status(404).json({msg: 'Error en addParticipante'});
   }
 }
+
+export const getProjectByFaculty = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await Project.findAll({where: {idF: id}});
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(404).json({msg: 'Error en getProjectByFaculty'});
+  }
+}

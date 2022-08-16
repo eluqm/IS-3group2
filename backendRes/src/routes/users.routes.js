@@ -11,7 +11,8 @@ import {deleteItemById,
         getLabelsById,
         getParticipants,
         addParticipante,
-        updateProject} from "../controllers/projec.controller.js";
+        updateProject,
+        getProjectByFaculty} from "../controllers/projec.controller.js";
 import {verifyToken} from "../utils/token.utils.js";
 
 const router = Router();
@@ -24,6 +25,12 @@ router.put('/re/:id', updateUser);
 router.get('/re/:id/proj', verifyToken, getProjectsById);
 router.delete('/re/:id', deleteItemById);
 router.get('/res/:id', getProjectDataById);
+
+
+
+router.get('/proj/:id', getProjectByFaculty);
+
+
 
 router.put('/res/:id', updateProject);
 

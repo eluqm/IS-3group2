@@ -4,21 +4,21 @@ export const facultades = [
     {id: 1, name: 'Ciencias Biológicas'}, 
     {id: 2, name: 'Enfermería'},
     {id: 3, name: 'Medicina'},
-    {id: 4, name: 'Arquitectura y Urbanismo'},
-    {id: 5, name: 'CS. Naturales y Formales'},
-    {id: 6, name: 'Geología, Física y Minas'},
-    {id: 7, name: 'Ingeniería Civil'},
-    {id: 8, name: 'Ingeniería de Procesos'},
-    {id: 9, name: 'Ingeniería de Producción y Servicios'},
-    {id: 10, name: 'Filosofía y Humanidades'},
-    {id: 11, name: 'Administración'},
-    {id: 12, name: 'Agronomía'},
-    {id: 13, name: 'Ciencias Contables y Financieras'},
-    {id: 14, name: 'Ciencias de la Educación'},
-    {id: 15, name: 'Ciencia Histórico Sociales'},
-    {id: 16, name: 'Derecho'},
-    {id: 17, name: 'Economía'},
-    {id: 18, name: 'Psicología, Relaciones Industriales y Ciencias de la Comunicación'}
+    {id: 5, name: 'Arquitectura y Urbanismo'},
+    {id: 6, name: 'CS. Naturales y Formales'},
+    {id: 7, name: 'Geología, Física y Minas'},
+    {id: 8, name: 'Ingeniería Civil'},
+    {id: 9, name: 'Ingeniería de Procesos'},
+    {id: 10, name: 'Ingeniería de Producción y Servicios'},
+    {id: 11, name: 'Filosofía y Humanidades'},
+    {id: 12, name: 'Administración'},
+    {id: 13, name: 'Agronomía'},
+    {id: 14, name: 'Ciencias Contables y Financieras'},
+    {id: 15, name: 'Ciencias de la Educación'},
+    {id: 16, name: 'Ciencia Histórico Sociales'},
+    {id: 17, name: 'Derecho'},
+    {id: 18, name: 'Economía'},
+    {id: 19, name: 'Psicología, Relaciones Industriales y Ciencias de la Comunicación'}
 ]
 
 export const features = [
@@ -66,4 +66,10 @@ export const navigationD = [
 export const headerNavigate = [
   { href: '/login', content: 'Investigador', div: 'rounded-md shadow', asty: 'text-white bg-cyan-700 hover:bg-cyan-800 md:py-4 md:text-lg md:px-10' },
   { href: '/projects', content: 'Estudiante', div: 'mt-3 sm:mt-0 sm:ml-3', asty: 'text-cyan-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10' }
+]
+
+export const navigationN = [
+  { name: 'Home', href: '/' },
+  { name: 'Estudiante', href: '#' },
+  { name: 'Investigador', href: '/login' }
 ]
