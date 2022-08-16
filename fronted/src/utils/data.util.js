@@ -20,7 +20,6 @@ export const facultades = [
     {id: 17, name: 'Economía'},
     {id: 18, name: 'Psicología, Relaciones Industriales y Ciencias de la Comunicación'}
 ]
-  
 
 export const features = [
     {
@@ -62,4 +61,9 @@ export const navigation = [
 export const navigationD = [
     { name: 'Dashboard', href: '/dash', current: true },
     { name: '+ Proyectos', href: '/addproj', current: false }
+]
+
+export const headerNavigate = [
+  { href: '/login', content: 'Investigador', div: 'rounded-md shadow', asty: 'text-white bg-cyan-700 hover:bg-cyan-800 md:py-4 md:text-lg md:px-10' },
+  { href: '/projects', content: 'Estudiante', div: 'mt-3 sm:mt-0 sm:ml-3', asty: 'text-cyan-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10' }
 ]

@@ -8,8 +8,6 @@ import { saveinLocalStorage } from '../utils/utils';
 export default function Login() {
 	const [user, setUser] = useState('');
 	const [pass, setPass] = useState('');
-	const [mess, setMess] = useState('');
-
 	const history = useHistory();
 
 	const Login = async (e) => {
