@@ -1,16 +1,12 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Login from './components/Login';
 
-import Features from "./components/Features";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Sign from "./components/Sign";
-import Nav from "./components/Nav";
 import Dashboard from "./pages/Dashboard";
 import AddProject from "./pages/AddProject";
-import Card from "./components/Card";
 import Perfil from "./pages/Perfil";
 import DetailsProject from "./pages/Details";
+import Index from "./pages/Index";
+import LoginPage from "./pages/Login";
+import SignPage from "./pages/SignPage";
 
 function App() {
   return (
@@ -18,21 +14,15 @@ function App() {
       <Switch>
 
         <Route exact path={'/'}>
-          <Header />
-          <Features />
-          <Card />
-          <Footer />
+          <Index />
         </Route>
 
         <Route path={'/login'}>
-          <Nav />
-          <Login />
+          <LoginPage />
         </Route>
 
         <Route path={'/sign'}>
-          <Nav />
-          <Sign />
-          <Footer />
+          <SignPage />
         </Route>
 
         <Route path={'/dash'}>
