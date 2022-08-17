@@ -70,6 +70,6 @@ export const headerNavigate = [
 
 export const navigationN = [
   { name: 'Home', href: '/' },
-  { name: 'Estudiante', href: '#' },
+  { name: 'Estudiante', href: '/projects' },
   { name: 'Investigador', href: '/login' }
 ]
