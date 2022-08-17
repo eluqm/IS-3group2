@@ -1,1 +1,1 @@
-# Fronted para BeResearcher
+# Fronted para BeResearcher.
