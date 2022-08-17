@@ -12,7 +12,6 @@ export default function Perfil() {
 
   const [namecompleto, setName] = useState('');
   const [pass, setPass] = useState('');
-  const [user, setUser] = useState('');
   const [emailcontacto, setEmail] = useState('');
   const [areaRese, setArea] = useState('');
   const [insitucion, setInsti] = useState('');
@@ -27,7 +26,6 @@ export default function Perfil() {
       const x = await axios.get(`http://localhost:5001/re/${id}`);
       setName(x.data.namecompleto);
       setPass(x.data.pass);
-      setUser(x.data.user);
       setEmail(x.data.emailcontacto);
       setArea(x.data.areaRese);
       setInsti(x.data.insitucion);
@@ -40,7 +38,7 @@ export default function Perfil() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:5001/re/${id}`, {
-        namecompleto, pass, user, emailcontacto, insitucion, sobremi
+        namecompleto, pass, emailcontacto, insitucion, sobremi
       }).then(() => alert('Perfil Actualizado'));
       history.push('/dash');
     } catch (err) {
@@ -74,18 +72,6 @@ export default function Perfil() {
                             required={true}
                             className={inputstyle}
                             value={namecompleto} onChange={(e) => setName(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                      <div class="grid grid-cols-7 gap-6">
-                        <div className="col-span-6 sm:col-span-4">
-                          <FormLabel name={'Usuario'} />
-                          <input
-                            type={'text'}
-                            required={true}
-                            className={inputstyle}
-                            value={user} onChange={(e) => setUser(e.target.value)}
                           />
                         </div>
                       </div>
