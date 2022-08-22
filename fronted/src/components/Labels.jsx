@@ -16,7 +16,7 @@ export default function LabelsById(props) {
   return (
     <div className="flex flex-row flex-wrap space-x-1 space-y-1">
       {vec.map((e) => (
-        <button className="bg-green-800 box-content hover:bg-zinc-200 h-auto w-auto p-2 border-4 border-green-800 rounded-lg">
+        <button key={e.id} className="bg-green-800 box-content  h-auto w-auto p-2 border-4 border-green-800 rounded-lg">
           <p className="font-medium text-lg text-zinc-50" > {e.area} </p>
         </button>
       ))}

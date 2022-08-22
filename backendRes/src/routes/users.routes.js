@@ -12,7 +12,8 @@ import {deleteItemById,
         getParticipants,
         addParticipante,
         updateProject,
-        getProjectByFaculty} from "../controllers/projec.controller.js";
+        getProjectByFaculty,
+        addLike} from "../controllers/projec.controller.js";
 import {verifyToken} from "../utils/token.utils.js";
 
 const router = Router();
@@ -29,6 +30,7 @@ router.get('/res/:id', getProjectDataById);
 
 
 router.get('/proj/:id', getProjectByFaculty);
+router.put('/proj/:id', addLike);
 
 
 

@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { type } from "../utils/types.utils";
 
 export default function RowProject({ props }) {
-  const { titulo, id, likes, fechaPubli } = props;
+  const { titulo, id, likes, fechaPubli, idP } = props;
   const [res, setRes] = useState(type);
 
   useEffect(() => {
@@ -21,6 +21,15 @@ export default function RowProject({ props }) {
     fetch();
   }, [id]);
 
+  const addLike = async () => {
+    try {
+      await axios.put(`http://localhost:5001/proj/${idP}`).then(
+        () => alert('Like dado!'));
+    } catch(err) {
+      alert(`Error al dar like a ${idP}`)
+    }
+  }
+
   const history = useHistory();
 
   const getDetail = () => {
@@ -32,20 +41,20 @@ export default function RowProject({ props }) {
 
   return (
     <>
-      <button onClick={getDetail} className="box-content hover:bg-stone-200  w-5/6 p-5 border-2 border-stone-800 hover:border-stone-900 rounded-lg">
+      <div className="box-content hover:bg-stone-200  w-5/6 p-5 border-2 border-stone-800 hover:border-stone-900 rounded-lg">
         <div className="flex flex-row justify-between">
-          <div> <p className="font-medium text-xl"> {titulo} </p> </div>
+          <button onClick={getDetail} > <p className="font-medium text-xl"> {titulo} </p> </button>
           <div className="flex flex-row items-center space-x-1">
-            <div> <p className="font-normal text-2xl text-rose-600"> {likes} </p> </div>
-            <div> <HeartIcon className="h-8 w-8" aria-hidden="true" color="red" /> </div>
+             <p className="font-normal text-2xl text-rose-600"> {likes} </p>
+            <button onClick={addLike}> <HeartIcon className="h-8 w-8" aria-hidden="true" color="red" /> </button>
           </div>
         </div>
-        <div className="flex flex-row space-x-4 ">
+        <div className="flex flex-row space-x-4">
           <p className="text-stone-600 text-sm" > {res.name} </p>
           <p className="text-stone-600 text-sm" > {res.inst} </p>
-          <p className="text-stone-600 text-sm" > {fechaPubli} </p>
+          <p className="text-stone-600 text-sm" > {fechaPubli } </p>
         </div>
-      </button>
+      </div>
     </>
   );
 }

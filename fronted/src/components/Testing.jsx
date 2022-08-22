@@ -24,7 +24,7 @@ export default function Testing() {
   return (
     <>
       <NavOnly name={'BeResearcher'} />
-      <div className="bg-white">
+      <div className="bg-white ">
         <div className='flex flex-row'>
           <Areas setValueSearch={setSearch} />
           <div className='w-full flex flex-col'>

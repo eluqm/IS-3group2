@@ -24,7 +24,7 @@ def update_user(id):
 		sql = "UPDATE projects SET likes = likes + 1 WHERE projects.idP = ´id´"
 		cursor.execute(sql)
 		datos = cursor.fetchall()
-		return
+		return 
 	except Exception as ex:
 		return "Error"
 
@@ -36,4 +36,4 @@ def pagina_no_encontrada(error):
 if __name__ == "__main__":
 	app.config.from_object(config['development'])
 	app.register_error_handler(404, pagina_no_encontrada)
-	app.run()
+	app.run(port=6001)

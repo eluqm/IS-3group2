@@ -128,3 +128,21 @@ export const getProjectByFaculty = async (req, res) => {
     res.status(404).json({msg: 'Error en getProjectByFaculty'});
   }
 }
+
+export const addLike = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const exist = await Project.findByPk(id);
+    if (exist) {
+      let likes = exist?.get('likes');
+      likes += 1;
+      console.log(likes);
+      await exist.update({likes});
+      res.status(200).json({msg: 'Actualizado'});
+    } else {
+      return res.status(400).json({msg: `The project with ${id} doesn't exist`});
+    }
+  } catch (err) {
+    res.status(404).json({msg: 'Error en addLike'});
+  }
+}

@@ -12,10 +12,10 @@ export default function DisplayProj(props) {
       setVecP(data.data);
     }
     fetch();
-  }, [id]);
+  }, [id, vecP]);
 
   return (
-    <div className='grid flex-col space-y-6 justify-items-center'>
+    <div className='grid flex-col space-y-6 justify-items-center tracking-tight'>
       <div className="font-bold text-slate-900 text-6xl mx-20">  Proyectos  </div> &nbsp;
       {vecP.map((e) => (
         <RowProject
