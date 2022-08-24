@@ -21,6 +21,13 @@ export const facultades = [
     {id: 19, name: 'Psicología, Relaciones Industriales y Ciencias de la Comunicación'}
 ]
 
+export const schools = [
+  {id: 1, name: 'Ciencia de la Computación'},
+  {id: 2, name: 'Ingeniería Civil'},
+  {id: 3, name: 'Ingeniería Pesquera'},
+  {id: 4, name: 'Matemática'}
+]
+
 export const features = [
     {
       name: 'Posgrado',

@@ -1,6 +1,7 @@
 import { Project } from "../models/project.js";
 import { Area } from "../models/areas.js";
 import { Participante } from "../models/paticipantes.js";
+import { Escuela } from "../models/escuelas.js";
 
 export const deleteItemById = async (req, res) => {
   const {id} = req.params;
@@ -110,7 +111,12 @@ export const getParticipants = async (req, res) => {
 
 export const addParticipante = async (req, res) => {
   const { body } = req;
+  const { idP } = body;
   try {
+    const proj = await Project.findByPk(idP);
+    let vacantes = proj?.get('vacantes');
+    vacantes -= 1;
+    await proj.update({vacantes});
     const newPart = new Participante(body);
     await newPart.save();
     res.status(200).json({msg: 'OK'});
@@ -136,7 +142,6 @@ export const addLike = async (req, res) => {
     if (exist) {
       let likes = exist?.get('likes');
       likes += 1;
-      console.log(likes);
       await exist.update({likes});
       res.status(200).json({msg: 'Actualizado'});
     } else {
@@ -144,5 +149,30 @@ export const addLike = async (req, res) => {
     }
   } catch (err) {
     res.status(404).json({msg: 'Error en addLike'});
+  }
+}
+
+export const getSchoolInProjectById = async (req, res) => {
+  const { id } = req.params;
+  try { 
+    const exist = await Project.findByPk(id);
+    if (exist) {
+      const data = await Escuela.findAll({where: {idP: id}});
+      res.status(200).json(data);
+    } else 
+      res.status(400).json({msg: `The project with ${id} doesn't exist`})
+  } catch (err) {
+    res.status(404).json({msg: 'Error en getSchoolInProjectById'});
+  }
+}
+
+export const addSchoolToProject = async (req, res) => {
+  const { body } = req;
+  try {
+    const newSchool = new Escuela(body);
+    await newSchool.save();
+    res.status(200).json({msg: 'OK'});
+  } catch (err) {
+    res.status(404).json({msg: 'Error en addSchoolToProject'});
   }
 }

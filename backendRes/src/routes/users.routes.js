@@ -13,7 +13,9 @@ import {deleteItemById,
         addParticipante,
         updateProject,
         getProjectByFaculty,
-        addLike} from "../controllers/projec.controller.js";
+        addLike,
+        getSchoolInProjectById,
+        addSchoolToProject} from "../controllers/projec.controller.js";
 import {verifyToken} from "../utils/token.utils.js";
 
 const router = Router();
@@ -27,12 +29,8 @@ router.get('/re/:id/proj', verifyToken, getProjectsById);
 router.delete('/re/:id', deleteItemById);
 router.get('/res/:id', getProjectDataById);
 
-
-
 router.get('/proj/:id', getProjectByFaculty);
 router.put('/proj/:id', addLike);
-
-
 
 router.put('/res/:id', updateProject);
 
@@ -43,5 +41,8 @@ router.get('/res/lab/:id', getLabelsById);
 
 router.post('/res/part', addParticipante);
 router.get('/res/part/:id', getParticipants);
+
+router.get('/schools/:id', getSchoolInProjectById);
+router.post('/schools', addSchoolToProject);
 
 export default router;

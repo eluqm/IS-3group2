@@ -3,6 +3,7 @@ import LabelsById from "./Labels";
 import BecariosById from "./Becarios";
 import { HeartIcon } from "@heroicons/react/outline";
 import FooterProject from "./FootProject";
+import SchoolsById from "./SchoolsById";
 
 export default function RenderProject({ p }) {
   const { titulo, antecedentes, descripcion, fechaPubli, idP, vacantes, likes, fechaInit, fechaFin, financiacion } = p;
@@ -33,6 +34,9 @@ export default function RenderProject({ p }) {
           <BecariosById id={idP} />
         </div>
       </div>
+      <br/>
+      <p className="font-semibold text-4xl"> Escuelas </p>
+      <SchoolsById id={idP} />
       <br/>
       <div className="flex flex-row justify-between items-center">
         <FooterProject title={'Financiación'} content={financiacion} />

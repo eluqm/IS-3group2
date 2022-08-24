@@ -11,11 +11,14 @@ export default function RowProject({ props }) {
   useEffect(() => {
     const fetch = async () => {
       const data = await axios.get(`http://localhost:5001/re/${id}`);
-      const { namecompleto, insitucion, emailcontacto } = data.data;
+      const { namecompleto, insitucion, emailcontacto, fecharegistro, areaRese, sobremi } = data.data;
       setRes(() => ({
         name: namecompleto,
         inst: insitucion,
-        fech: emailcontacto
+        fech: emailcontacto,
+        regi: fecharegistro,
+        area: areaRese,
+        abot: sobremi
       }));
     }
     fetch();

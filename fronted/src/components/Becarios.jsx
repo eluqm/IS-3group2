@@ -16,7 +16,7 @@ export default function BecariosById(props) {
   return (
     <div className="flex flex-row flex-wrap space-x-1 space-y-1">
       {vec.map((e) => (
-        <button key={e.id} className="bg-red-800 box-content h-auto w-auto p-2 border-4 border-red-800 rounded-lg">
+        <button key={e.id} className="bg-red-800 box-content h-auto w-auto p-2 border-4 border-red-700 rounded-lg">
           <p className="font-medium text-lg text-zinc-50" > {e.participante} </p>
         </button>
       ))}

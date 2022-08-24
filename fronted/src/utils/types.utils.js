@@ -9,5 +9,8 @@ export default function getDateType() {
 export const type = {
     name: '', 
     inst: '', 
-    fech: ''
+    fech: '',
+    regi: '',
+    area: '',
+    abot: ''
 };

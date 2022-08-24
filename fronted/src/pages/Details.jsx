@@ -9,6 +9,7 @@ import { inputstyle, inputstyle2 } from "../utils/styles.utils";
 import FormLabel from "../components/FormLabel";
 import { buttonSty } from "../utils/styles.utils";
 import Subtitle from "../components/Subtitle";
+import { schools } from "../utils/data.util";
 
 export default function DetailsProject() {
   const location = useLocation();
@@ -28,6 +29,9 @@ export default function DetailsProject() {
   const [vecVecBec, setVecBec] = useState([]);
   const [becario, setBecario] = useState('');
 
+  const [vecEscuelas, setVecEscuela] = useState([]);
+  const [escuela, setEscuela] = useState('');
+
   useEffect(() => {
     const fetch = async () => {
       const x = await axios.get(`http://localhost:5001/res/${id}`);
@@ -40,7 +44,7 @@ export default function DetailsProject() {
       setFin(x.data.fechaFin);
     }
     fetch();
-  }, []);
+  }, [becario]);
 
   useEffect(() => {
     const fetch = async () => {
@@ -57,6 +61,25 @@ export default function DetailsProject() {
     }
     fetch();
   }, [vecVecBec]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const x = await axios.get(`http://localhost:5001/schools/${id}`);
+      setVecEscuela(x.data);
+    }
+    fetch();
+  }, [vecEscuelas]);
+
+  const addSchool = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`http://localhost:5001/schools`, {
+        idP: id, nameescuela: escuela
+      }).then(() => alert(`Escuela:${escuela} agregada`));
+    } catch (err) {
+      alert('Error al agregar escuela!');
+    }
+  }
 
   const updateProject = async (e) => {
     e.preventDefault();
@@ -87,15 +110,20 @@ export default function DetailsProject() {
 
   const addParticipant = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post('http://localhost:5001/res/part', {
-        idP: id, participante: becario
-      }).then(() => alert(`${becario} Guardado!`)).catch(
-        (err) => console.log(`error en ${err}`));
+    if (vacantes == 0) {
+      alert('Ya no hay vacantes! Agregue más');
       setBecario('');
-    } catch (err) {
-      alert(`Error al agregar ${becario}`);
-      setBecario('');
+    } else {
+      try {
+        await axios.post('http://localhost:5001/res/part', {
+          idP: id, participante: becario
+        }).then(() => alert(`${becario} Guardado!`)).catch(
+          (err) => console.log(`error en ${err}`));
+        setBecario('');
+      } catch (err) {
+        alert(`Error al agregar ${becario}`);
+        setBecario('');
+      }
     }
   }
 
@@ -261,22 +289,18 @@ export default function DetailsProject() {
                   <h3 className="text-lg font-medium leading-6 text-gray-900"> Estudiante Aceptados para el Proyecto </h3>
                   <p className="mt-1 text-sm text-gray-600"> Si aceptaste algún becario para el proyecto, anotalo aquí. Ten actualizado esto para que las personas sepan si aún hay pueden postularse.</p>
                 </div>
-
                 <br />
                 <Subtitle content={'Nombres de Becarios'} />
-
                 <div className="flex flex-col flex-wrap">
                   {vecVecBec.map((feature) => (
                     <dt className="font-medium text-gray-900">{feature.participante}</dt>
                   ))}
                 </div>
-
               </div>
               <div className="mt-5 md:mt-0 md:col-span-2">
                 <form onSubmit={addParticipant}>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-white sm:p-2">
-
                       <div className="col-span-6 sm:col-span-4">
                         <FormLabel name={'Nombre del Becario'} />
                         <input
@@ -287,14 +311,55 @@ export default function DetailsProject() {
                           value={becario} onChange={(e) => setBecario(e.target.value)}
                         />
                       </div>
-
                     </div>
                     <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                      <button type="submit" class={buttonSty} > Guardar Etiqueta </button>
+                      <button type="submit" class={buttonSty} > Añadir Becario </button>
                     </div>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
 
+          <br />
+
+          <div className="mt-10 sm:mt-0">
+            <div className="md:grid md:grid-cols-3 md:gap-6">
+              <div className="md:col-span-1">
+                <div className="px-4 sm:px-0">
+                  <h3 className="text-lg font-medium leading-6 text-gray-900"> Escuelas Involucradas en el Proyecto de Investigación </h3>
+                  <p className="mt-1 text-sm text-gray-600"> Sabemos que los proyectos pueden involucrar más de un área del conocimiento, por eso aquí puedes agregar las escuelas que participan.</p>
+                </div>
+                <br />
+                <Subtitle content={'Nombres de Escuelas'} />
+                <div className="flex flex-col flex-wrap">
+                  {vecEscuelas.map((feature) => (
+                    <dt className="font-medium text-gray-900">{feature.nameescuela}</dt>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 md:mt-0 md:col-span-2">
+                <form onSubmit={addSchool}>
+                  <div className="shadow overflow-hidden sm:rounded-md">
+                    <div className="px-4 py-5 bg-white sm:p-2">
+                      <div className="col-span-6 sm:col-span-4">
+                        <FormLabel name={'Nombre de la escuela'} />
+                        <select
+                          required={true}
+                          className={inputstyle}
+                          value={escuela} onChange={(e) => setEscuela(e.target.value)}
+                        >
+                          {schools.map((e) => (
+                            <option value={e.name}> {e.name} </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                    <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                      <button type="submit" class={buttonSty} > Añadir Escuela </button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
