@@ -62,7 +62,6 @@ export default function DisplayProj(props) {
             <input
               type={'text'}
               value={search} onChange={(e) => setSearch(e.target.value)}
-              className={'border-zinc-900 p-2'}
             />
           </div>
 
