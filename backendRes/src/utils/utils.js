@@ -1,5 +1,5 @@
 export const corsConfig = {
-  origin: 'http://localhost:3000',
+  origin: 'https://aa10-132-184-131-95.sa.ngrok.io',
   credentials: true,
   optionSuccessStatus: 200
 }
