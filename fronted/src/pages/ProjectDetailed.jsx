@@ -28,7 +28,7 @@ export default function ProjectDetailed() {
           </div>
         </div>
       </div>
-      {openR && <ResearchCard fn={setOpenR} p={r} />}
+      {openR && <ResearchCard fn={setOpenR} p={r} id={p.id} />}
     </>
   );
 }

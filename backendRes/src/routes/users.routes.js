@@ -1,8 +1,12 @@
 import {Router} from "express";
+
 import {authUser, 
         signNewUser, 
         getDataFromUserById, 
-        updateUser} from "../controllers/user.controller.js";
+        updateUser,
+        getAreasResearchById,
+        addAreaResearchToUser} from "../controllers/user.controller.js";
+
 import {deleteItemById, 
         getProjectsById, 
         postNewProject, 
@@ -16,6 +20,7 @@ import {deleteItemById,
         addLike,
         getSchoolInProjectById,
         addSchoolToProject} from "../controllers/projec.controller.js";
+
 import {verifyToken} from "../utils/token.utils.js";
 
 const router = Router();
@@ -24,6 +29,9 @@ router.post('/re/auth', authUser);
 router.post('/re/sign', signNewUser);
 router.get('/re/:id', getDataFromUserById);
 router.put('/re/:id', updateUser);
+
+router.get('/re/area/:id', getAreasResearchById);
+router.post('/re/area', addAreaResearchToUser);
 
 router.get('/re/:id/proj', verifyToken, getProjectsById);
 router.delete('/re/:id', deleteItemById);

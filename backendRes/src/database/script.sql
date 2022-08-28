@@ -5,7 +5,7 @@ use testing;
 create table users (
 	id int primary key auto_increment,
     namecompleto varchar(50),
-    pass varchar(255),
+    pass varchar(255),  
     user varchar (50),
     fecharegistro date, 
     emailcontacto varchar(50) default '',

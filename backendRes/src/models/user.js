@@ -34,6 +34,9 @@ export const User = ORM.define('User', {
   sobremi: {
     type: DataTypes.STRING,
     defaultValue: ''
+  },
+  codigo_orcdir: {
+    type: DataTypes.STRING
   }
 }, {
   freezeTableName: true,

@@ -3,8 +3,9 @@ import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FormLabel from "../components/FormLabel";
-import { inputstyle, inputstyle2 } from "../utils/styles.utils";
+import { inputstyle, inputstyle2, buttonSty } from "../utils/styles.utils";
 import jwtDecode from "jwt-decode";
+import Subtitle from "../components/Subtitle";
 
 export default function Perfil() {
   const data = localStorage.getItem('token');
@@ -13,9 +14,13 @@ export default function Perfil() {
   const [namecompleto, setName] = useState('');
   const [pass, setPass] = useState('');
   const [emailcontacto, setEmail] = useState('');
-  const [areaRese, setArea] = useState('');
   const [insitucion, setInsti] = useState('');
   const [sobremi, setSobremi] = useState('');
+
+  const [codeOCDR, setCode] = useState('');
+
+  const [areaR, setAR] = useState('');
+  const [vecAreas, setVecAreas] = useState([]);
 
   const history = useHistory();
 
@@ -27,9 +32,9 @@ export default function Perfil() {
       setName(x.data.namecompleto);
       setPass(x.data.pass);
       setEmail(x.data.emailcontacto);
-      setArea(x.data.areaRese);
       setInsti(x.data.insitucion);
       setSobremi(x.data.sobremi);
+      setCode(x.data.codigo_orcdir);
     }
     fetch();
   }, []);
@@ -44,6 +49,26 @@ export default function Perfil() {
     } catch (err) {
       alert('Error al Guardar!')
       console.log(`error in ${err}`);
+    }
+  }
+
+  useEffect(() => {
+    const fetch = async () => {
+      const x = await axios.get(`http://localhost:5001/re/area/${id}`);
+      setVecAreas(x.data);
+    }
+    fetch();
+  }, [vecAreas]);
+
+  const AddAreaRes = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5001/re/area', {
+        idUser: id, area_res: areaR
+      });
+      alert('Agregado!');
+    } catch (err) {
+      alert(`Error al añadir AR: ${areaR}`);
     }
   }
 
@@ -100,6 +125,18 @@ export default function Perfil() {
                         </div>
                       </div>
 
+                      <div class="grid grid-cols-5 gap-6">
+                        <div className="col-span-3 sm:col-span-2">
+                          <FormLabel name={'Código ORCDIR'} />
+                          <input
+                            type={'text'}
+                            required={true}
+                            className={inputstyle2}
+                            value={codeOCDR} onChange={(e) => setCode(e.target.value)}
+                          />
+                        </div>
+                      </div>
+
                       <div class="grid grid-cols-4 gap-6">
                         <div class="col-span-3 sm:col-span-2">
                           <FormLabel name={'Email de Contacto'} />
@@ -136,6 +173,48 @@ export default function Perfil() {
               </div>
             </div>
           </div>
+
+          <br />
+
+          <div className="mt-10 sm:mt-0">
+            <div className="md:grid md:grid-cols-3 md:gap-6">
+              <div className="md:col-span-1">
+                <div className="px-4 sm:px-0">
+                  <h3 className="text-lg font-medium leading-6 text-gray-900"> Tus Áreas de Investigación </h3>
+                  <p className="mt-1 text-sm text-gray-600"> Aquí puedes listar tus áreas de Investigación.</p>
+                </div>
+                <br />
+                <Subtitle content={'Áreas agregadas'} />
+                <div className="flex flex-col flex-wrap">
+                  {vecAreas.map((e) => (
+                    <dt className="font-medium text-gray-900">{e.area_res}</dt>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 md:mt-0 md:col-span-2">
+                <form onSubmit={AddAreaRes}>
+                  <div className="shadow overflow-hidden sm:rounded-md">
+                    <div className="px-4 py-5 bg-white sm:p-2">
+                      <div className="col-span-6 sm:col-span-4">
+                        <FormLabel name={'Nombre del Área'} />
+                        <input
+                          type={'text'}
+                          required={true}
+                          className={inputstyle}
+                          placeholder={'Series Temporales'}
+                          value={areaR} onChange={(e) => setAR(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                      <button type="submit" class={buttonSty} > Añadir Área </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
       </main>
     </>

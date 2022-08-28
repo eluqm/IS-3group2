@@ -6,7 +6,7 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-async function main() {
+async function main() { 
   try {
     await ORM.authenticate();
     console.log('CONECTADO A DB');

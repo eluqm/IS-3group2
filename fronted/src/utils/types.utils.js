@@ -12,5 +12,7 @@ export const type = {
     fech: '',
     regi: '',
     area: '',
-    abot: ''
+    abot: '',
+    ocdr: '',
+    idUs: 0
 };

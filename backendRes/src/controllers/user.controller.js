@@ -1,5 +1,6 @@
 import {User} from "../models/user.js";
 import jwt from 'jsonwebtoken';
+import { AreaResearch } from "../models/area_rese.js";
 
 const KEY = process.env.KEY || 'CHUPETÍN';
 
@@ -61,5 +62,26 @@ export const getDataFromUserById = async (req, res) => {
     res.status(200).json(data);
   } catch (err) { 
     res.status(404).json({msg: 'Error en getDataFromUserById'});
+  }
+}
+
+export const getAreasResearchById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await AreaResearch.findAll({where: {idUser: id}});
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(404).json({msg: 'Error en getAreasResearchById'});
+  }
+}
+
+export const addAreaResearchToUser = async (req, res) => {
+  const { body } = req;
+  try {
+    const newAR = new AreaResearch(body);
+    await newAR.save();
+    res.status(200).json({msg: 'AreaER creada!'}); 
+  } catch (err) {
+    res.status(404).json({msg: 'Error en addAreaResearchToUser'})
   }
 }
