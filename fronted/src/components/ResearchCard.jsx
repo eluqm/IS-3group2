@@ -21,7 +21,7 @@ export default function ResearchCard(props) {
         <div className="flex flex-col justify-center space-y-2">
           <div className="p-4 text-white text-4xl font-semibold tracking-tight"> {name} </div>
           <div>
-            <p className="font-medium text-slate-300"> Institución </p>
+            <p className="font-medium text-slate-300"> Institución </p> 
             <p className="font-semibold text-amber-400 text-xl"> {inst} </p>
             <p className="font-medium text-slate-300"> Email Contacto </p>
             <p className="font-semibold text-amber-400 text-xl"> {fech} </p>
