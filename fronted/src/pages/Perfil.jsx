@@ -17,7 +17,7 @@ export default function Perfil() {
   const [insitucion, setInsti] = useState('');
   const [sobremi, setSobremi] = useState('');
 
-  const [codeOCDR, setCode] = useState('');
+  const [codigo_orcdir, setCode] = useState('');
 
   const [areaR, setAR] = useState('');
   const [vecAreas, setVecAreas] = useState([]);
@@ -43,7 +43,7 @@ export default function Perfil() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:5001/re/${id}`, {
-        namecompleto, pass, emailcontacto, insitucion, sobremi
+        namecompleto, pass, emailcontacto, insitucion, sobremi, codigo_orcdir
       }).then(() => alert('Perfil Actualizado'));
       history.push('/dash');
     } catch (err) {
@@ -132,7 +132,7 @@ export default function Perfil() {
                             type={'text'}
                             required={true}
                             className={inputstyle2}
-                            value={codeOCDR} onChange={(e) => setCode(e.target.value)}
+                            value={codigo_orcdir} onChange={(e) => setCode(e.target.value)}
                           />
                         </div>
                       </div>
