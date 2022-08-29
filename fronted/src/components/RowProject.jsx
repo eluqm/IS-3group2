@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { type } from "../utils/types.utils";
 
 export default function RowProject({ props }) {
-  const { titulo, id, likes, fechaPubli, idP } = props;
+  const { titulo, id, likes, fechaPubli, idP, estado } = props;
   const [res, setRes] = useState(type);
 
   useEffect(() => {
@@ -53,10 +53,11 @@ export default function RowProject({ props }) {
             <button onClick={addLike}> <HeartIcon className="h-8 w-8" aria-hidden="true" color="red" /> </button>
           </div>
         </div>
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-row space-x-4 items-center">
           <p className="text-stone-600 text-sm" > {res.name} </p>
           <p className="text-stone-600 text-sm" > {res.inst} </p>
           <p className="text-stone-600 text-sm" > {fechaPubli } </p>
+          {estado ? <p className="bg-green-700 rounded-lg text-sm font-medium text-white p-1"> Activo </p> : <p className="bg-red-700 rounded-lg text-sm font-medium text-white p-1"> Inactivo </p>}
         </div>
       </div>
     </>

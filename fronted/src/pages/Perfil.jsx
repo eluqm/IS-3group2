@@ -164,7 +164,6 @@ export default function Perfil() {
                         <p class="mt-2 text-sm text-gray-500"> Aquí puedes compartir tus intereses personales y académicos.</p>
                       </div>
                     </div>
-
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                       <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-700 hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> Guardar Cambios </button>
                     </div>
@@ -214,7 +213,6 @@ export default function Perfil() {
               </div>
             </div>
           </div>
-
         </div>
       </main>
     </>

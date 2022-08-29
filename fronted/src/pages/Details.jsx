@@ -1,6 +1,6 @@
 import DashNav from "../components/DashNav";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import getDateType from "../utils/types.utils";
 import { Hello } from "../components/Hello";
@@ -10,6 +10,11 @@ import FormLabel from "../components/FormLabel";
 import { buttonSty } from "../utils/styles.utils";
 import Subtitle from "../components/Subtitle";
 import { schools } from "../utils/data.util";
+
+const states = [
+  {id: true, name: 'Activo'},
+  {id: false, name: 'Inactivo'}
+]
 
 export default function DetailsProject() {
   const location = useLocation();
@@ -22,6 +27,8 @@ export default function DetailsProject() {
   const [vacantes, setVac] = useState(0);
   const [fechaInit, setInit] = useState(getDateType());
   const [fechaFin, setFin] = useState(getDateType());
+
+  const [estado, setState] = useState(true);
 
   const [vecLabels, setVec] = useState([]);
   const [label, setLabel] = useState('');
@@ -42,9 +49,10 @@ export default function DetailsProject() {
       setVac(x.data.vacantes);
       setInit(x.data.fechaInit);
       setFin(x.data.fechaFin);
+      setState(x.data.estado);
     }
     fetch();
-  }, [becario]);
+  }, []);
 
   useEffect(() => {
     const fetch = async () => {
@@ -85,7 +93,7 @@ export default function DetailsProject() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:5001/res/${id}`, {
-        titulo, antecedentes, descripcion, financiacion, vacantes, fechaInit, fechaFin
+        titulo, antecedentes, descripcion, financiacion, vacantes, fechaInit, fechaFin, estado
       }).then(() => alert('Proyecto Actualizado!')).catch(
         (err) => console.log(`error en ${err}`));
     } catch (err) {
@@ -221,6 +229,19 @@ export default function DetailsProject() {
                             value={fechaFin} onChange={(e) => setFin(e.target.value)}
                           />
                         </div>
+                      </div>
+
+                      <div className="col-span-6 sm:col-span-4">
+                        <FormLabel name={'Estado'} />
+                        <select
+                          required={true}
+                          className={inputstyle}
+                          value={estado} onChange={(e) => setState(e.target.value)}
+                        >
+                          {states.map((e) => (
+                            <option value={e.id}> {e.name} </option>
+                          ))}
+                        </select>
                       </div>
 
                     </div>
